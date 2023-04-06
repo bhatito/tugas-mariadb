@@ -24,21 +24,21 @@ create table vendor(
      kontak varchar(11));
 
  create table pembelian(
-id int not null auto_increment primary key,
-tanggal varchar(45),
-nomor varchar(10),     
-produk_id int(11) not null references produk(id),
-jumlah int(11),
-harga double,
-vendor_id int(11) not null references vendor(id));
+    id int not null auto_increment primary key,
+    tanggal varchar(45),
+    nomor varchar(10),     
+    produk_id int(11) not null references produk(id),
+    jumlah int(11),
+    harga double,
+    vendor_id int(11) not null references vendor(id));
 
-ALTER TABLE pelanggan
-ADD COLUMN IF NOT EXISTS
-alamat varchar(40);
+ ALTER TABLE pelanggan
+    ADD COLUMN IF NOT EXISTS
+    alamat varchar(40);
 
-ALTER TABLE pelanggan
-CHANGE nama nama_pelanggan varchar(45);
+ ALTER TABLE pelanggan
+    CHANGE nama nama_pelanggan varchar(45);
 
-ALTER TABLE pelanggan 
-MODIFY nama_pelanggan varchar(50);
+ ALTER TABLE pelanggan 
+    MODIFY nama_pelanggan varchar(50);
 
